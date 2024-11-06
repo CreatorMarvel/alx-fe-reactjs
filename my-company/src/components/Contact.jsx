@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useReducer } from "react";
 
 function reducer(state, action) {
@@ -14,6 +15,8 @@ function reducer(state, action) {
 }
 
 function Contact() {
+	const [isFilled, setIsFilled] = useState(false);
+
 	const initialState = {
 		name: "",
 		email: "",
@@ -27,7 +30,9 @@ function Contact() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		alert(`${name}\n${email}\n${message}\nSubmitted`);
+		if (!name || !email || !message) return alert("Fill all Fields!");
+		setIsFilled(!isFilled);
+		isFilled && alert(`${name}\n${email}\n${message}\nSubmitted`);
 	};
 
 	return (
