@@ -4,10 +4,12 @@ import UserInfo from "./UserInfo";
 
 function App() {
 	return (
-		<UserContext>
+		<UserContext.Provider
+			value={{ name: "Jane Doe", email: "jane.doe@example.com" }}
+		>
 			<ProfilePage />;
 			<UserInfo />
-		</UserContext>
+		</UserContext.Provider>
 	);
 }
 
