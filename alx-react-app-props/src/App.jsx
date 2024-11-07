@@ -1,14 +1,14 @@
-import React from "react";
-import UserContext from "./context/UserContext";
-import UserDetails from "./UserDetails";
+import ProfilePage from "./ProfilePage";
+import UserContext from "./UserContext";
+import UserInfo from "./UserInfo";
 
-const App = () => {
+function App() {
 	return (
 		<UserContext>
-			<h1>Hello</h1>
-			<UserDetails />
+			<ProfilePage />;
+			<UserInfo />
 		</UserContext>
 	);
-};
+}
 
 export default App;
